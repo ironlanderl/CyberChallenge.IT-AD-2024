@@ -246,7 +246,9 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        post_flag_id('CCForms-1', team_id, {'user_id': user_id, 'form_id': form['id']})  
+        # TODO: Uncomment
+        # post_flag_id('CCForms-1', team_id, {'user_id': user_id, 'form_id': form['id']})  
+        pass
     except Exception as e:
         quit(Status.ERROR, 'Failed to post flag id', str(e))
 
@@ -284,8 +286,8 @@ if __name__ == '__main__':
         team_id = 'X'
         
         check_sla(host)
-        #put_flag(host, flag)
-        #get_flag(host, flag)
+        put_flag(host, flag)
+        get_flag(host, flag)
         quit(Status.OK, 'OK')
 
     

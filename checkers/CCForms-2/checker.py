@@ -259,7 +259,9 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        post_flag_id("CCForms-2", team_id, {"answer_id": ansid, "form_id": form["id"]})
+        # TODO: Uncomment
+        # post_flag_id("CCForms-2", team_id, {"answer_id": ansid, "form_id": form["id"]})
+        pass
     except Exception as e:
         quit(Status.ERROR, "Failed to post flag id", str(e))
 
