@@ -257,7 +257,9 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        post_flag_id('Inlook-2', team_id, flag_id)
+        # TODO: Enable
+        # post_flag_id('Inlook-2', team_id, flag_id)
+        pass
     except Exception:
         quit(Status.ERROR, 'Failed to post flag id', str(traceback.format_exc()) + f"\n{flag}")
 
@@ -285,7 +287,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = '10.60.' + team_id + '.1'
+    host = '127.0.' + team_id + '.1'
     if 'LOCALHOST' in os.environ:
         host = '127.0.0.1'
 

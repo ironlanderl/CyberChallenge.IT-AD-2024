@@ -371,7 +371,9 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        post_flag_id('ExCCel-2', team_id, {'worksheet_id' : w['id'], 'owner_name' : username})
+        # TODO: Enable
+        # post_flag_id('ExCCel-2', team_id, {'worksheet_id' : w['id'], 'owner_name' : username})
+        pass
     except Exception:
         quit(Status.ERROR, 'Failed to post flag id', nice_logs(logs))
 
@@ -414,7 +416,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = '10.60.' + team_id + '.1'
+    host = '127.0.' + team_id + '.1'
 
     if action == Action.CHECK_SLA.name:
         try:

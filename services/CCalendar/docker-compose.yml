@@ -7,7 +7,7 @@ services:
             - './backend/www:/var/www'
             - './backend/db:/var/db'
         environment:
-            - 'CRYPT_SECRET=dummy'
+            - 'CRYPT_SECRET=76be2f759bdc9fe21eac040a5556e7cbff1d1d6c1cba888575d1b5f98c4d1d77'
 
     frontend:
         build: frontend
@@ -18,4 +18,4 @@ services:
         ports:
             - '8443:443'
         environment:
-            - 'CRYPT_SECRET=dummy'
+            - 'CRYPT_SECRET=76be2f759bdc9fe21eac040a5556e7cbff1d1d6c1cba888575d1b5f98c4d1d77'

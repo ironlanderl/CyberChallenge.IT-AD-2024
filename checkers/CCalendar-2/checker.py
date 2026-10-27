@@ -384,10 +384,12 @@ def put_flag(host, team_id, flag):
 
         # Post flag ID to game server
         try:
-            post_flag_id('CCalendar-2', team_id, {
-                'username': flag_receiver.username,
-                'date': inv_date.strftime('%Y-%m-%d')
-            })
+            # TODO: Enable
+            # post_flag_id('CCalendar-2', team_id, {
+            #     'username': flag_receiver.username,
+            #     'date': inv_date.strftime('%Y-%m-%d')
+            #})
+            pass
         except Exception as e:
             # Our fault
             print_exc(file=sys.stderr)
@@ -451,7 +453,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = 'localhost' if 'LOCALHOST' in os.environ else '10.60.' + team_id + '.1'
+    host = 'localhost' if 'LOCALHOST' in os.environ else '127.0.' + team_id + '.1'
 
     if action == Action.CHECK_SLA.name:
         try:

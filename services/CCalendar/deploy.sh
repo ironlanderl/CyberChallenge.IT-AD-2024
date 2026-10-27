@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y jq openssl iproute2
+# export DEBIAN_FRONTEND=noninteractive
+# apt-get update
+# apt-get install -y jq openssl iproute2
 
 ip=$(ip -j -4 a show game 2>/dev/null | jq ".[0].addr_info[0].local" -r)
 if [ -z "$ip" ]; then

@@ -15,7 +15,7 @@ services:
     cpus: 2
     mem_limit: 1024mb
     environment:
-      FLASK_SECRET: CHANGEME
+      FLASK_SECRET: 4C6765D2D983DFEBA8F882A3CB1F16FC
       INSTANCE_PATH: /data
       WORKSHEETS_PATH: /worksheets
       PROCESSOR_HOST: processor

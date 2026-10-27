@@ -339,7 +339,9 @@ def put_flag(host, team_id, flag):
 
         # Post flag id to game server
         try:
-            post_flag_id('CCalendar-1', team_id, {'username': username})
+            # TODO: Enable
+            # post_flag_id('CCalendar-1', team_id, {'username': username})
+            pass
         except Exception as e:
             quit(Status.ERROR, 'Failed to post flag ID', str(e))
     except Exception as e:
@@ -388,7 +390,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = 'localhost' if 'LOCALHOST' in os.environ else '10.60.' + team_id + '.1'
+    host = 'localhost' if 'LOCALHOST' in os.environ else '127.0.' + team_id + '.1'
 
     if action == Action.CHECK_SLA.name:
         try:
