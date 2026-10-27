@@ -311,7 +311,7 @@ if __name__ == "__main__":
     data = get_data()
     action = data["action"]
     team_id = data["teamId"]
-    host = "10.60." + team_id + ".1"
+    host = "127.0." + team_id + ".1"
 
     if action == Action.CHECK_SLA.name:
         try:
