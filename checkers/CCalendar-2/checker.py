@@ -384,12 +384,10 @@ def put_flag(host, team_id, flag):
 
         # Post flag ID to game server
         try:
-            # TODO: Enable
-            # post_flag_id('CCalendar-2', team_id, {
-            #     'username': flag_receiver.username,
-            #     'date': inv_date.strftime('%Y-%m-%d')
-            #})
-            pass
+            post_flag_id('CCalendar-2', team_id, {
+                'username': flag_receiver.username,
+                'date': inv_date.strftime('%Y-%m-%d')
+            })
         except Exception as e:
             # Our fault
             print_exc(file=sys.stderr)

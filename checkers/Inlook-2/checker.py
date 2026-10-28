@@ -257,9 +257,7 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        # TODO: Enable
-        # post_flag_id('Inlook-2', team_id, flag_id)
-        pass
+        post_flag_id('Inlook-2', team_id, flag_id)
     except Exception:
         quit(Status.ERROR, 'Failed to post flag id', str(traceback.format_exc()) + f"\n{flag}")
 

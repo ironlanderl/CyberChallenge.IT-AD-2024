@@ -371,9 +371,7 @@ def put_flag(host, flag):
 
     # Post flag id to game server
     try:
-        # TODO: Enable
-        # post_flag_id('ExCCel-1', team_id, {'worksheet_id' : w['id']})
-        pass
+        post_flag_id('ExCCel-1', team_id, {'worksheet_id' : w['id']})
     except Exception:
         quit(Status.ERROR, 'Failed to post flag id', nice_logs(logs))
 

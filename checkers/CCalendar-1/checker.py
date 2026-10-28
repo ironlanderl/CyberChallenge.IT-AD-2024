@@ -339,9 +339,7 @@ def put_flag(host, team_id, flag):
 
         # Post flag id to game server
         try:
-            # TODO: Enable
-            # post_flag_id('CCalendar-1', team_id, {'username': username})
-            pass
+            post_flag_id('CCalendar-1', team_id, {'username': username})
         except Exception as e:
             quit(Status.ERROR, 'Failed to post flag ID', str(e))
     except Exception as e:
