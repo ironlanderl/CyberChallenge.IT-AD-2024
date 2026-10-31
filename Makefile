@@ -8,11 +8,11 @@ up:
 
 .PHONY: down
 down:
-	systemctl start --user arrpc.service # Inlook uses the same port
 	docker compose -f ./services/CCForms/docker-compose.yml down
 	docker compose -f ./services/CCalendar/docker-compose.yml down
 	docker compose -f ./services/ExCCel/docker-compose.yml down
 	docker compose -f ./services/Inlook/docker-compose.yml down
+	systemctl start --user arrpc.service # Inlook uses the same port
 
 .PHONY: setup
 setup:
