@@ -11,6 +11,8 @@ from chall import Challenge, LoginError
 from checklib import *
 from formula import FormulaGenerator
 
+HOSTS = ["192.168.1.1", "192.168.1.2"]
+
 
 def rand_str(length: int = 10):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
@@ -414,7 +416,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = '127.0.' + team_id + '.1'
+    host = HOSTS[int(team_id) % len(HOSTS)]
 
     if action == Action.CHECK_SLA.name:
         try:

@@ -6,6 +6,8 @@ import string
 from client import Client
 import traceback
 
+HOSTS = ["192.168.1.1", "192.168.1.2"]
+
 PORT = 1337
 alphabet = string.ascii_letters + string.digits
 
@@ -285,7 +287,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = '127.0.' + team_id + '.1'
+    host = HOSTS[int(team_id) % len(HOSTS)]
     if 'LOCALHOST' in os.environ:
         host = '127.0.0.1'
 

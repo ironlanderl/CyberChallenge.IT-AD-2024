@@ -11,6 +11,8 @@ from copy import deepcopy
 from checklib import *
 from utils import *
 
+HOSTS = ["192.168.1.1", "192.168.1.2"]
+
 FRONTEND_PORT = 3000
 BACKEND_PORT = 3001
 
@@ -292,7 +294,7 @@ if __name__ == '__main__':
     data = get_data()
     action = data['action']
     team_id = data['teamId']
-    host = '127.0.' + team_id + '.1'
+    host = HOSTS[int(team_id) % len(HOSTS)]
 
     if action == Action.CHECK_SLA.name:
         try:

@@ -14,6 +14,8 @@ from utils import *
 FRONTEND_PORT = 3000
 BACKEND_PORT = 3001
 
+HOSTS = ["192.168.1.1", "192.168.1.2"]
+
 os.makedirs('data', exist_ok=True)
 def check_sla(host):
 
@@ -309,7 +311,7 @@ if __name__ == "__main__":
     data = get_data()
     action = data["action"]
     team_id = data["teamId"]
-    host = "127.0." + team_id + ".1"
+    host = HOSTS[int(team_id) % len(HOSTS)]
 
     if action == Action.CHECK_SLA.name:
         try:
